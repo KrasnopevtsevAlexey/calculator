@@ -1,0 +1,181 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Светлый фон */
+    color: #000; /* Темный текст */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+    padding: 0 20px; /* Отступы для мобильных устройств */
+}
+#toggle-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF; /* Цвет кнопки */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#toggle-button:hover {
+    background-color: #0056b3; /* Цвет кнопки при наведении */
+}
+
+
+body.dark-theme {
+    background-color: #1e1e1e; /* Темный фон */
+    color: #ffffff; /* Светлый текст */
+}
+
+body.dark-theme .calc-screen {
+    background-color: #333333; /* Темный фон дисплея */
+    color: #ffffff; /* Светлый текст */
+}
+
+body.dark-theme #toggle-button {
+    background-color: #BB86FC; /* Цвет кнопки темы в темной теме */
+}
+
+body.dark-theme #toggle-button:hover {
+    background-color: #9B6DD8; /* Цвет кнопки при наведении в темной теме */
+}
+
+.contains {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.theme-toggle {
+    margin-bottom: 20px;
+}
+
+.calc {
+    max-height: 500px;
+    width: 100%; /* Задаем ширину 100% */
+    max-width: 300px; /* Ограничиваем максимальную ширину */
+    background: #000;
+    border-radius: 20px;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 18px;
+    box-shadow: 4px 4px 4px #4f4f4f;
+    margin: 50px auto;
+}
+
+.buttons {
+    display: grid;
+    grid-template-areas: 
+    "ac plus-minus percent division"
+    "seven eight nine multi"
+    "four five six minus"
+    "one two three plus"
+    "zero zero dot equal";
+    grid-gap: 7px;
+    justify-items: center;
+}
+
+.btn {
+    height: 60px;
+    width: 60px;
+    margin: 2px;
+    border-radius: 50%;
+    background-color: #333;
+    text-align: center;
+    line-height: 60px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s;
+}
+
+.calc-screen {
+    background-color: #f0f0f0;
+    height: 125px;
+    display: grid;
+    justify-items: end;
+    align-items: end;
+    padding: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border-radius: 10px;
+}
+
+.calc-screen p {
+    font-size: 4rem;
+    text-align: right;
+    margin: 0;
+    color: #980505;
+}
+
+.btn.zero {
+    grid-area: zero;
+    width: 100%;
+    border-radius: 34px; /* Более округлая форма для кнопки 0 */
+}
+
+.btn:hover {
+    filter: brightness(120%);
+}
+
+.btn:active {
+    filter: brightness(190%);
+}
+
+.bg-grey {
+    background: grey;
+}
+
+.bg-orange {
+    background-color: orange;
+}
+
+/* Адаптивные стили */
+@media (max-width: 600px) {
+    .calc {
+        max-width: 100%; /* Калькулятор занимает всю ширину */
+    }
+
+    .calc-screen p {
+        font-size: 2.5rem; /* Уменьшение шрифта на мобильных устройствах */
+    }
+
+    .btn {
+        height: 40px; /* Уменьшение высоты кнопок на мобильных устройствах */
+        width: 40px; /* Уменьшение ширины кнопок на мобильных устройствах */
+        line-height: 40px; /* Центрирование текста */
+        font-size: 1.1rem; /* Уменьшение размера шрифта на кнопках */
+    }
+    
+    #toggle-button {
+        padding: 8px 16px; /* Уменьшаем отступы для кнопки переключения темы */
+        font-size: 1rem; /* Уменьшаем размер шрифта для кнопки */
+    }
+}
+@media (max-width: 500px ) {
+    .calc {
+        max-width: 100%; /* Калькулятор занимает всю ширину */
+    }
+
+    .calc-screen p {
+        font-size: 2.3rem; /* Уменьшение шрифта на мобильных устройствах */
+    }
+
+    .btn {
+        height: 30px; /* Уменьшение высоты кнопок на мобильных устройствах */
+        width: 30px; /* Уменьшение ширины кнопок на мобильных устройствах */
+        line-height: 30px; /* Центрирование текста */
+        font-size: 1rem; /* Уменьшение размера шрифта на кнопках */
+    }
+    
+    #toggle-button {
+        padding: 8px 16px; /* Уменьшаем отступы для кнопки переключения темы */
+        font-size: 1rem; /* Уменьшаем размер шрифта для кнопки */
+    }
+}
